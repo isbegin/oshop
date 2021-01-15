@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product-filter.component.css']
 })
 export class ProductFilterComponent implements OnInit {
+@Input('category') category;
   categories$: any;
-  @Input('category') category;
 
   constructor(categoryService: CategoryService) { 
     this.categories$ = categoryService.getAll();

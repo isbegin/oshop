@@ -30,6 +30,7 @@ import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ProductFormComponent,
     ProductCardComponent,
     ProductFilterComponent,
+    ProductQuantityComponent,
   ],
   imports: [
     BrowserModule,

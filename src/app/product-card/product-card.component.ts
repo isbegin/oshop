@@ -1,3 +1,4 @@
+import { ShoppingCart } from './../models/shopping-cart';
 import { ShoppingCartService } from './../shopping-cart.service';
 import { ShoppingCartComponent } from './../shopping-cart/shopping-cart.component';
 import { Product } from './../models/product';
@@ -12,18 +13,13 @@ import { isNgTemplate } from '@angular/compiler';
 export class ProductCardComponent {
  @Input('product') product : Product;
  @Input('show-actions') showActions = true;
- @Input('shopping-cart') shoppingCart;
+ @Input('shopping-cart') shoppingCart: ShoppingCart;
+  item: any;
 
   constructor(private cartService : ShoppingCartService) { }
 
-  addToCart(product: Product) {
-   this.cartService.addToCart(product);
+  addToCart() {
+   this.cartService.addToCart(this.product);
   }
-  
-  getQuantity(){
-    if(!this.shoppingCart) return 0;
 
-    let item = this.shoppingCart.items[this.product.$key];
-    return item ? item.quantity : 0;
-  }
 }
